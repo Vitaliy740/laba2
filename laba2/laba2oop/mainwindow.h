@@ -23,7 +23,7 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    ImageTree<int,std::string>* Tree=new ImageTree<int,std::string>();
+    ImageTree<int,std::string> Tree;
     void refresh_list();
     void throwError(std::string errMessage)const;
 

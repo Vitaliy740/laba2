@@ -15,7 +15,7 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra $(DEFINES)
-CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
+CXXFLAGS      = -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I..\laba2oop -I. -I..\..\..\5.14.2\mingw73_32\include -I..\..\..\5.14.2\mingw73_32\include\QtWidgets -I..\..\..\5.14.2\mingw73_32\include\QtGui -I..\..\..\5.14.2\mingw73_32\include\QtANGLE -I..\..\..\5.14.2\mingw73_32\include\QtCore -Idebug -I. -I..\..\..\5.14.2\mingw73_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
@@ -111,7 +111,7 @@ compiler_moc_predefs_make_all: debug/moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) debug\moc_predefs.h
 debug/moc_predefs.h: ../../../5.14.2/mingw73_32/mkspecs/features/data/dummy.cpp
-	g++ -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -Wextra -Wextra -dM -E -o debug\moc_predefs.h ..\..\..\5.14.2\mingw73_32\mkspecs\features\data\dummy.cpp
+	g++ -fno-keep-inline-dllexport -g -Wall -Wextra -Wextra -dM -E -o debug\moc_predefs.h ..\..\..\5.14.2\mingw73_32\mkspecs\features\data\dummy.cpp
 
 compiler_moc_header_make_all: debug/moc_mainwindow.cpp
 compiler_moc_header_clean:
@@ -498,7 +498,65 @@ debug/mainwindow.o: ../laba2oop/mainwindow.cpp ../laba2oop/mainwindow.h \
 		../../../5.14.2/mingw73_32/include/QtWidgets/QMessageBox \
 		../../../5.14.2/mingw73_32/include/QtWidgets/qmessagebox.h \
 		../../../5.14.2/mingw73_32/include/QtWidgets/qdialog.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../../5.14.2/mingw73_32/include/QtCore/QVariant \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QApplication \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qapplication.h \
+		../../../5.14.2/mingw73_32/include/QtCore/qcoreapplication.h \
+		../../../5.14.2/mingw73_32/include/QtCore/qeventloop.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qdesktopwidget.h \
+		../../../5.14.2/mingw73_32/include/QtGui/qguiapplication.h \
+		../../../5.14.2/mingw73_32/include/QtGui/qinputmethod.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QDateEdit \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qdatetimeedit.h \
+		../../../5.14.2/mingw73_32/include/QtCore/qdatetime.h \
+		../../../5.14.2/mingw73_32/include/QtCore/qcalendar.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qabstractspinbox.h \
+		../../../5.14.2/mingw73_32/include/QtGui/qvalidator.h \
+		../../../5.14.2/mingw73_32/include/QtCore/qregularexpression.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QGroupBox \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qgroupbox.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qframe.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QHBoxLayout \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qboxlayout.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qlayout.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qlayoutitem.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qgridlayout.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QLabel \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qlabel.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QLineEdit \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qlineedit.h \
+		../../../5.14.2/mingw73_32/include/QtGui/qtextcursor.h \
+		../../../5.14.2/mingw73_32/include/QtGui/qtextformat.h \
+		../../../5.14.2/mingw73_32/include/QtGui/qpen.h \
+		../../../5.14.2/mingw73_32/include/QtGui/qtextoption.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QListWidget \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qlistwidget.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qlistview.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qabstractitemview.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qabstractscrollarea.h \
+		../../../5.14.2/mingw73_32/include/QtCore/qabstractitemmodel.h \
+		../../../5.14.2/mingw73_32/include/QtCore/qitemselectionmodel.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qabstractitemdelegate.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qstyleoption.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qslider.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qabstractslider.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QMenuBar \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qmenubar.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qmenu.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qaction.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qactiongroup.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QPushButton \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qpushbutton.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qabstractbutton.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QSpacerItem \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QStatusBar \
+		../../../5.14.2/mingw73_32/include/QtWidgets/qstatusbar.h \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QVBoxLayout \
+		../../../5.14.2/mingw73_32/include/QtWidgets/QWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\laba2oop\mainwindow.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 

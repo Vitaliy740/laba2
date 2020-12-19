@@ -247,6 +247,7 @@ Makefile: ../laba2oop/laba2oop.pro ../../../5.14.2/mingw73_32/mkspecs/win32-g++/
 		../../../5.14.2/mingw73_32/mkspecs/features/qt_config.prf \
 		../../../5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		../../../5.14.2/mingw73_32/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		../../../5.14.2/mingw73_32/mkspecs/features/toolchain.prf \
 		../../../5.14.2/mingw73_32/mkspecs/features/default_pre.prf \
@@ -275,7 +276,6 @@ Makefile: ../laba2oop/laba2oop.pro ../../../5.14.2/mingw73_32/mkspecs/win32-g++/
 		../../../5.14.2/mingw73_32/lib/Qt5Gui.prl \
 		../../../5.14.2/mingw73_32/lib/Qt5Core.prl \
 		../../../5.14.2/mingw73_32/lib/qtmain.prl \
-		.qmake.stash \
 		../../../5.14.2/mingw73_32/mkspecs/features/build_pass.prf
 	$(QMAKE) -o Makefile ..\laba2oop\laba2oop.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../../5.14.2/mingw73_32/mkspecs/features/spec_pre.prf:
@@ -455,6 +455,7 @@ Makefile: ../laba2oop/laba2oop.pro ../../../5.14.2/mingw73_32/mkspecs/win32-g++/
 ../../../5.14.2/mingw73_32/mkspecs/features/qt_config.prf:
 ../../../5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf:
 ../../../5.14.2/mingw73_32/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf:
 ../../../5.14.2/mingw73_32/mkspecs/features/toolchain.prf:
 ../../../5.14.2/mingw73_32/mkspecs/features/default_pre.prf:
@@ -483,7 +484,6 @@ Makefile: ../laba2oop/laba2oop.pro ../../../5.14.2/mingw73_32/mkspecs/win32-g++/
 ../../../5.14.2/mingw73_32/lib/Qt5Gui.prl:
 ../../../5.14.2/mingw73_32/lib/Qt5Core.prl:
 ../../../5.14.2/mingw73_32/lib/qtmain.prl:
-.qmake.stash:
 ../../../5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\laba2oop\laba2oop.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

@@ -14,8 +14,28 @@ class List
 public:
     ListNode<K,V> *Head, *Tail;
     List():Head(NULL),Tail(NULL){}
-    ~List();
-    void Add(K key, V value);
+    ~List(){
+        while(Head){
+            Tail=Head->next;
+            delete Head;
+            Head=Tail;
+        }
+    };
+    void Add(K key, V value){
+        ListNode<K,V> *temp=new ListNode<K,V>;
+        temp->next=NULL;
+        temp->key=key;
+        temp->value=value;
+        if(Head!=NULL){
+            temp->prev=Tail;
+            Tail->next=temp;
+            Tail=temp;
+        }
+        else{
+            temp->prev=NULL;
+            Head=Tail=temp;
+        }
+    };
 
 };
 

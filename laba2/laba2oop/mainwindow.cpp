@@ -34,7 +34,7 @@ std::string dateFromHash(int hash) {
 
 void MainWindow::refresh_list() {
     ui->listWidget->clear();
-    List<int, std::string> *List = Tree->OrderedList();
+    List<int, std::string> *List = Tree.OrderedList();
     ListNode<int, std::string> *it = List->Head;
     while (it != nullptr) {
         std::string title = it->value + " @ " + dateFromHash(it->key);
@@ -50,30 +50,31 @@ void MainWindow::refresh_list() {
 }
 
 void MainWindow::on_addButton_clicked() {
-    int dateHash = hashFromDate(ui->dateEdit->date());
-    Tree->Add(dateHash, ui->nameField->text().toUtf8().constData());
+    //int dateHash = hashFromDate(ui->dateEdit->date());
+    //std::cout<<std::to_string(dateHash)<<std::endl;
+    Tree.Add(3, ui->nameField->text().toUtf8().constData());
     refresh_list();
 }
 
 void MainWindow::on_deleteButton_clicked() {
     int dateHash = hashFromDate(ui->deleteDateEdit->date());
-    Tree->RemoveAt(dateHash);
+    Tree.RemoveAt(dateHash);
     refresh_list();
 }
 
 void MainWindow::on_saveButton_clicked() const {
-    Tree->WriteInFile(ui->fileNameField->text().toUtf8().constData());
+    Tree.WriteInFile(ui->fileNameField->text().toUtf8().constData());
 }
 
 void MainWindow::on_clearButton_clicked() {
-    Tree->DeleteTree();
+    Tree.DeleteTree();
     ui->listWidget->clear();
     ui->deleteButton->setEnabled(false);
     ui->clearButton->setEnabled(false);
 }
 
 void MainWindow::on_loadButton_clicked() {
-Tree->ReadFromFile(ui->fileNameField->text().toUtf8().constData());
+Tree.ReadFromFile(ui->fileNameField->text().toUtf8().constData());
     refresh_list();
 }
 
